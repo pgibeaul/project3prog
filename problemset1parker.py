@@ -1,4 +1,4 @@
-# setting constant variables for days, hours and creating a divider
+# setting constant variables for days, hours and creating a divider to match sample output
 days = 5
 minimum_hours = 7
 maximum_hours = 24
