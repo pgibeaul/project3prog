@@ -14,3 +14,10 @@ def get_valid_hours(day_number):
             print(f"Hours must be between 0 and {maximum_hours}.")
         else:
             return int(hours)
+
+# creating a function that collects hours worked for each day and returns them as a list
+def get_all_hours(days):
+    hour_list = []
+    for day_number in range(1, days + 1):
+        hour_list.append(get_valid_hours(day_number))
+    return hour_list
