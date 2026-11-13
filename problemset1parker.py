@@ -10,3 +10,7 @@ def get_valid_hours(day_number):
         hours = input(f"Enter hours worked on Day #{day_number}: ").strip()
         if not hours.isdigit():
             print("Please enter a whole number.")
+        elif int(hours) > maximum_hours:
+            print(f"Hours must be between 0 and {maximum_hours}.")
+        else:
+            return int(hours)
