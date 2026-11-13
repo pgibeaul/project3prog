@@ -4,7 +4,7 @@ minimum_hours = 7
 maximum_hours = 24
 divider = "-" * 70
 
-# creating functions and their logic
+# creating a function that takes users input for their work hours and validates it
 def get_valid_hours(day_number):
     while True:
         hours = input(f"Enter hours worked on Day #{day_number}: ").strip()
