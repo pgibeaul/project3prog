@@ -21,3 +21,14 @@ def get_all_hours(days):
     for day_number in range(1, days + 1):
         hour_list.append(get_valid_hours(day_number))
     return hour_list
+
+# creating a function that finds the highest hours worked and returns every day number that matched it
+def highest_days(hour_list):
+    highest = max(hour_list)
+    high_days = []
+    day_number = 1
+    for hours in hour_list:
+        if hours == highest:
+            high_days.append(day_number)
+        day_number += 1
+    return highest, high_days
