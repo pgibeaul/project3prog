@@ -22,3 +22,29 @@ def get_redact_letters():
         if valid and not letter_list == []:
             return letter_list
         print("Enter letters separated by commas only.")
+
+# creating a function that replaces the chosen letters with underscores and counts how many were replaced
+def get_redact_phrase(phrase, letter_list):
+    redacted = ""
+    count = 0
+    for char in phrase:
+        if char.lower() in letter_list:
+            redacted += "_"
+            count += 1
+        else:
+            redacted += char
+    return redacted, count
+
+# creating main function to run the program and continue redacting phrases until the user types quit
+def main():
+    phrase = get_phrase()
+    while not phrase.lower() == "quit":
+        print()
+        letter_list = get_redact_letters()
+        redacted, count = get_redact_phrase(phrase, letter_list)
+        print(f"Number of letters redacted: {count}")
+        print(f"Redacted phrase: {redacted}")
+        print()
+        phrase = get_phrase()
+
+main()
