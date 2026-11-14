@@ -23,7 +23,7 @@ def get_all_hours(days):
     return hour_list
 
 # creating a function that finds the highest hours worked and returns every day number that matches it
-def highest_days(hour_list):
+def get_highest_days(hour_list):
     highest = max(hour_list)
     high_days = []
     day_number = 1
@@ -34,7 +34,7 @@ def highest_days(hour_list):
     return highest, high_days
 
 # creating a function that finds the lower end of hours worked (below minimum) and returns every day number that matches it
-def lowest_days(hour_list, minimum):
+def get_lowest_days(hour_list, minimum):
     low_days = []
     day_number = 1
     for hours in hour_list:
@@ -42,3 +42,29 @@ def lowest_days(hour_list, minimum):
             low_days.append(day_number)
         day_number += 1
     return low_days
+
+# creating main function that calculates and displays the work hour results
+def main():
+    hour_list = get_all_hours(days)
+
+    highest, high_days = get_highest_days(hour_list)
+    print(divider)
+    print("The most hours worked was on:")
+    for day_number in high_days:
+        print(f"Day #{day_number} when you worked {highest} hours.")
+
+    total = sum(hour_list)
+    average = total / days
+    print(divider)
+    print(f"The total number of hours worked was: {total}")
+    print(f"The average number of hours worked each day was: {average:.1f}")
+
+    low_days = get_lowest_days(hour_list, minimum_hours)
+    print(divider)
+    print(f"Days you slacked off (i.e. worked less than {minimum_hours} hours):")
+    if low_days == []:
+        print("None.")
+    for day_number in low_days:
+        print(f"Day #{day_number}: {hour_list[day_number - 1]} hours")
+
+main()
