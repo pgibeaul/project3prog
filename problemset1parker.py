@@ -22,7 +22,7 @@ def get_all_hours(days):
         hour_list.append(get_valid_hours(day_number))
     return hour_list
 
-# creating a function that finds the highest hours worked and returns every day number that matched it
+# creating a function that finds the highest hours worked and returns every day number that matches it
 def highest_days(hour_list):
     highest = max(hour_list)
     high_days = []
@@ -32,3 +32,13 @@ def highest_days(hour_list):
             high_days.append(day_number)
         day_number += 1
     return highest, high_days
+
+# creating a function that finds the lower end of hours worked (below minimum) and returns every day number that matches it
+def lowest_days(hour_list, minimum):
+    low_days = []
+    day_number = 1
+    for hours in hour_list:
+        if hours < minimum:
+            low_days.append(day_number)
+        day_number += 1
+    return low_days
