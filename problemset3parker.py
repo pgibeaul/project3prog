@@ -9,4 +9,11 @@ def get_number(prompt, minimum):
         else:
             return int(text)
 
-
+# creating function that asks for a guides name and prompts an error message if entered incorrectly
+def get_name(guide_number):
+    while True:
+        name = input(f"Enter the name of guide #{guide_number}: ").strip()
+        if name == "":
+            print("No name entered.")
+        else:
+            return name
