@@ -29,3 +29,7 @@ def get_guides(guides):
         names.append(name)
         boxes.append(box_count)
     return names, boxes
+
+# calculates average boxes sold per guide
+def calc_average(boxes, guides):
+    return sum(boxes) / guides
