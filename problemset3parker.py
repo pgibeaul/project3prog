@@ -44,3 +44,26 @@ def get_prize(box_count, highest, average):
         return "- Super Seller Badge"
     else:
         return "- Left over cookies"
+
+# making function that displays average boxes sold and lists each guide with what prize they won
+def get_results(names, boxes, average, guides):
+    highest = max(boxes)
+    print()
+    print()
+    print(f"The average number of boxes sold by each guide was {average:.1f}")
+    print()
+    print(f"{'Guide':<16}Prizes Won:")
+    print("-" * 70)
+    for index in range(guides):
+        prize = get_prize(boxes[index], highest, average)
+        print(f"{names[index]:<16}{prize}")
+
+# main function that runs the program
+def main():
+    guides = get_number("Enter the number of guides selling cookies: ", 1)
+    names, boxes = get_guides(guides)
+    average = calc_average(boxes, guides)
+    get_results(names, boxes, average, guides)
+
+
+main()
