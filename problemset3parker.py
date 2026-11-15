@@ -33,3 +33,14 @@ def get_guides(guides):
 # calculates average boxes sold per guide
 def calc_average(boxes, guides):
     return sum(boxes) / guides
+
+# making function to decide what prize guides get based off how many boxes they sold
+def get_prize(box_count, highest, average):
+    if box_count == 0:
+        return "-"
+    elif box_count == highest:
+        return "- Trip to Girl Guide Jamboree in Aruba!"
+    elif box_count > average:
+        return "- Super Seller Badge"
+    else:
+        return "- Left over cookies"
