@@ -9,7 +9,7 @@ def get_number(prompt, minimum):
         else:
             return int(text)
 
-# creating function that asks for a guides name and prompts an error message if entered incorrectly
+# creating a function that asks for a guides name and prompts an error message if entered incorrectly
 def get_name(guide_number):
     while True:
         name = input(f"Enter the name of guide #{guide_number}: ").strip()
@@ -17,3 +17,15 @@ def get_name(guide_number):
             print("No name entered.")
         else:
             return name
+
+# creating a function that gets each guide's name and their boxes sold and stores them in lists
+def get_guides(guides):
+    names = []
+    boxes = []
+    for guide_number in range(1, guides + 1):
+        print()
+        name = get_name(guide_number)
+        box_count = get_number(f"Enter the number of boxes sold by {name}: ", 0)
+        names.append(name)
+        boxes.append(box_count)
+    return names, boxes
